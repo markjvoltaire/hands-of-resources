@@ -8,3 +8,12 @@ CREATE TABLE hats (
     kind TEXT NOT NULL,
     color TEXT NOT NULL
 );
+
+
+DROP TABLE IF EXISTS pants;
+
+CREATE TABLE pants (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    kind TEXT NOT NULL,
+    color TEXT NOT NULL
+);

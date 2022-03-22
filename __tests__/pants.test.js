@@ -12,16 +12,17 @@ describe('handOfResources routes', () => {
     pool.end();
   });
 
-  it('should create a hat', async () => {
-    //request(app) is sending a request to our app
+  it('should create a pair of pants', async () => {
     const res = await request(app)
-      .post('/api/v1/hats')
-      .send({ kind: 'snapback', color: 'red' });
+      .post('/api/v1/pants')
+      .send({ kind: 'jeans', color: 'blue' });
+
+    console.log('res', res.body);
 
     expect(res.body).toEqual({
       id: expect.any(String),
-      kind: 'snapback',
-      color: 'red',
+      kind: 'jeans',
+      color: 'blue',
     });
   });
 });
