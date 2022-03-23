@@ -17,3 +17,12 @@ CREATE TABLE pants (
     kind TEXT NOT NULL,
     color TEXT NOT NULL
 );
+
+
+DROP TABLE IF EXISTS shoes;
+
+CREATE TABLE shoes (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    kind TEXT NOT NULL,
+    color TEXT NOT NULL
+);
