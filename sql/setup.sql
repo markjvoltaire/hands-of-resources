@@ -26,3 +26,11 @@ CREATE TABLE shoes (
     kind TEXT NOT NULL,
     color TEXT NOT NULL
 );
+
+DROP TABLE IF EXISTS shirts;
+
+CREATE TABLE shirts (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    kind TEXT NOT NULL,
+    color TEXT NOT NULL
+);
