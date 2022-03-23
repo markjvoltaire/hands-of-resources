@@ -17,8 +17,6 @@ describe('handOfResources routes', () => {
       .post('/api/v1/socks')
       .send({ kind: 'ankle sock', color: 'black' });
 
-    console.log('res', res.body);
-
     expect(res.body).toEqual({
       id: expect.any(String),
       kind: 'ankle sock',
