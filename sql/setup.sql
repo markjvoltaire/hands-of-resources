@@ -34,3 +34,12 @@ CREATE TABLE shirts (
     kind TEXT NOT NULL,
     color TEXT NOT NULL
 );
+
+DROP TABLE IF EXISTS socks;
+
+CREATE TABLE socks (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    kind TEXT NOT NULL,
+    color TEXT NOT NULL
+);
+
