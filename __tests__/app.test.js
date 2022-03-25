@@ -53,4 +53,16 @@ describe('handOfResources routes', () => {
 
     expect(response.body).toEqual({ id: expect.any(String), ...expected });
   });
+
+  it('deletes a hat by id', async () => {
+    const expected = await Hat.createHat({
+      kind: 'dad hat',
+      color: 'white',
+    });
+
+    console.log('expected', expected);
+    const res = await request(app).delete(`/api/v1/hats/${expected.id}`);
+
+    expect(expected).not.toContain(res.body);
+  });
 });
