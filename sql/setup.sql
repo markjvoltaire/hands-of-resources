@@ -45,4 +45,4 @@ CREATE TABLE socks (
 
 INSERT INTO hats (kind, color) VALUES ('snapback', 'black');
 
-INSERT INTO pants (kind, color) VALUES ('jeans', 'blue')
+INSERT INTO pants (kind, color) VALUES ('jeans', 'red');

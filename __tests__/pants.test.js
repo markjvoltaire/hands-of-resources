@@ -38,4 +38,11 @@ describe('handOfResources routes', () => {
 
     expect(res.body).toEqual(expected);
   });
+
+  it('deletes a pants by id', async () => {
+    const expected = await Pants.getById(1);
+    const res = await request(app).delete('/api/v1/pants/1');
+
+    expect(res.body).toEqual(expected);
+  });
 });
