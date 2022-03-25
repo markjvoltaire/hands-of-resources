@@ -43,3 +43,4 @@ CREATE TABLE socks (
     color TEXT NOT NULL
 );
 
+INSERT INTO hats (kind, color) VALUES ('snapback', 'black')

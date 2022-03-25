@@ -2,6 +2,7 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
+const Shirts = require('../lib/models/Shirts');
 
 describe('handOfResources routes', () => {
   beforeEach(() => {
@@ -22,5 +23,12 @@ describe('handOfResources routes', () => {
       kind: 'long sleeve',
       color: 'red',
     });
+  });
+
+  it('should get all shirts', async () => {
+    const expected = await Shirts.getAllShirts();
+    const res = await request(app).get('/api/v1/shirts');
+
+    expect(res.body).toEqual(expected);
   });
 });
