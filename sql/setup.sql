@@ -46,3 +46,7 @@ CREATE TABLE socks (
 INSERT INTO hats (kind, color) VALUES ('snapback', 'black');
 
 INSERT INTO pants (kind, color) VALUES ('jeans', 'red');
+
+INSERT INTO shirts (kind, color) VALUES ('jersey', 'yellow');
+
+INSERT INTO shirts (kind, color) VALUES ('button-up', 'red')

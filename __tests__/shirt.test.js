@@ -31,4 +31,13 @@ describe('handOfResources routes', () => {
 
     expect(res.body).toEqual(expected);
   });
+
+  it('should get a shirt by id', async () => {
+    const expected = await Shirts.findById(2);
+
+    const res = await request(app).get(`/api/v1/shirts/2`);
+    console.log('res', res.body);
+
+    expect(res.body).toEqual(expected);
+  });
 });
