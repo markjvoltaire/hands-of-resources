@@ -49,4 +49,6 @@ INSERT INTO pants (kind, color) VALUES ('jeans', 'red');
 
 INSERT INTO shirts (kind, color) VALUES ('jersey', 'yellow');
 
-INSERT INTO shirts (kind, color) VALUES ('button-up', 'red')
+INSERT INTO shirts (kind, color) VALUES ('button-up', 'red');
+
+INSERT INTO shoes (kind, color) VALUES ('nike', 'red');

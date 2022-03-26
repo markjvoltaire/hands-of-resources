@@ -31,4 +31,12 @@ describe('handOfResources routes', () => {
 
     expect(res.body).toEqual(expected);
   });
+
+  it('should get shoes by id', async () => {
+    const expected = await Shoes.findById(1);
+
+    const res = await request(app).get('/api/v1/shoes/1');
+
+    expect(res.body).toEqual(expected);
+  });
 });

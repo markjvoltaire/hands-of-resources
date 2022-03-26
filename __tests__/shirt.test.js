@@ -3,6 +3,7 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 const Shirts = require('../lib/models/Shirts');
+const shirts = require('../lib/controllers/shirts');
 
 describe('handOfResources routes', () => {
   beforeEach(() => {
@@ -33,9 +34,9 @@ describe('handOfResources routes', () => {
   });
 
   it('should get a shirt by id', async () => {
-    const expected = await Shirts.findById(2);
+    const expected = await Shirts.findById(1);
 
-    const res = await request(app).get(`/api/v1/shirts/2`);
+    const res = await request(app).get(`/api/v1/shirts/1`);
     console.log('res', res.body);
 
     expect(res.body).toEqual(expected);
