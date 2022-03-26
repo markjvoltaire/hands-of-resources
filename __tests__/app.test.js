@@ -42,14 +42,11 @@ describe('handOfResources routes', () => {
   });
 
   it('should update hat', async () => {
-    const expected = await Hat.createHat({
-      kind: 'snapback',
-      color: 'black',
-    });
+    const expected = await Hat.updateHat(1, { color: 'red' });
 
     const response = await request(app)
-      .patch('/api/v1/hats/2')
-      .send({ color: 'black' });
+      .patch('/api/v1/hats/1')
+      .send({ color: 'red' });
 
     expect(response.body).toEqual({ id: expect.any(String), ...expected });
   });
