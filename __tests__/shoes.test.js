@@ -39,4 +39,15 @@ describe('handOfResources routes', () => {
 
     expect(res.body).toEqual(expected);
   });
+
+  it('should update a shoe', async () => {
+    const expected = await Shoes.updateShoes(1, { color: 'lime' });
+    console.log('expected', expected);
+
+    const resp = await request(app)
+      .patch('/api/v1/shoes/1')
+      .send({ color: 'lime' });
+
+    expect(resp.body).toEqual(expected);
+  });
 });
