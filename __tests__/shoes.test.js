@@ -51,10 +51,15 @@ describe('handOfResources routes', () => {
     expect(resp.body).toEqual(expected);
   });
 
-  it('should delete test by id', async () => {
-    const expected = await Shoes.findById(1);
-    const res = await request(app).delete(`/api/v1/shoes/1`);
+  it('deletes a shoe by id', async () => {
+    const expected = await Shoes.createShoes({
+      kind: 'jordans',
+      color: 'red',
+    });
 
-    expect(expected).toEqual(res.body);
+    console.log('expected', expected);
+    const res = await request(app).delete(`/api/v1/shoes/${expected.id}`);
+
+    expect(expected).not.toContain(res.body);
   });
 });
