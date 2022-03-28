@@ -41,4 +41,16 @@ describe('handOfResources routes', () => {
 
     expect(res.body).toEqual(expected);
   });
+
+  it('deletes a sock by id', async () => {
+    const expected = await Socks.createSocks({
+      kind: 'medium',
+      color: 'black',
+    });
+
+    console.log('expected', expected);
+    const res = await request(app).delete(`/api/v1/socks/${expected.id}`);
+
+    expect(expected).not.toContain(res.body);
+  });
 });
