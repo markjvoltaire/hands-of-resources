@@ -57,7 +57,6 @@ describe('handOfResources routes', () => {
       color: 'white',
     });
 
-    console.log('expected', expected);
     const res = await request(app).delete(`/api/v1/hats/${expected.id}`);
 
     expect(expected).not.toContain(res.body);

@@ -42,7 +42,6 @@ describe('handOfResources routes', () => {
 
   it('should update a shoe', async () => {
     const expected = await Shoes.updateShoes(1, { color: 'lime' });
-    console.log('expected', expected);
 
     const resp = await request(app)
       .patch('/api/v1/shoes/1')
@@ -57,7 +56,6 @@ describe('handOfResources routes', () => {
       color: 'red',
     });
 
-    console.log('expected', expected);
     const res = await request(app).delete(`/api/v1/shoes/${expected.id}`);
 
     expect(expected).not.toContain(res.body);

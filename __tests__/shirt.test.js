@@ -37,7 +37,6 @@ describe('handOfResources routes', () => {
     const expected = await Shirts.findById(1);
 
     const res = await request(app).get(`/api/v1/shirts/1`);
-    console.log('res', res.body);
 
     expect(res.body).toEqual(expected);
   });
@@ -49,8 +48,6 @@ describe('handOfResources routes', () => {
       .patch('/api/v1/shirts/1')
       .send({ color: 'green' });
 
-    console.log('res.body', res.body);
-
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
 
@@ -60,7 +57,6 @@ describe('handOfResources routes', () => {
       color: 'red',
     });
 
-    console.log('expected', expected);
     const res = await request(app).delete(`/api/v1/shirts/${expected.id}`);
 
     expect(expected).not.toContain(res.body);

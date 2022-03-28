@@ -37,8 +37,6 @@ describe('handOfResources routes', () => {
 
     const res = await request(app).get('/api/v1/socks/1');
 
-    console.log('res.body', res.body);
-
     expect(res.body).toEqual(expected);
   });
 
@@ -48,7 +46,6 @@ describe('handOfResources routes', () => {
       color: 'black',
     });
 
-    console.log('expected', expected);
     const res = await request(app).delete(`/api/v1/socks/${expected.id}`);
 
     expect(expected).not.toContain(res.body);
