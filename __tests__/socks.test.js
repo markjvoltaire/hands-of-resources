@@ -53,4 +53,14 @@ describe('handOfResources routes', () => {
 
     expect(expected).not.toContain(res.body);
   });
+
+  it('should update socks', async () => {
+    const expected = await Socks.updateSocks(1, { color: 'lime' });
+
+    const response = await request(app)
+      .patch('/api/v1/socks/1')
+      .send({ color: 'lime' });
+
+    expect(response.body).toEqual({ id: expect.any(String), ...expected });
+  });
 });
