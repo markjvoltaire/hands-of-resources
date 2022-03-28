@@ -53,4 +53,16 @@ describe('handOfResources routes', () => {
 
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
+
+  it('deletes a shirt by id', async () => {
+    const expected = await Shirts.createShirts({
+      kind: 'polo',
+      color: 'red',
+    });
+
+    console.log('expected', expected);
+    const res = await request(app).delete(`/api/v1/shirts/${expected.id}`);
+
+    expect(expected).not.toContain(res.body);
+  });
 });

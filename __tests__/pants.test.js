@@ -3,6 +3,7 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 const Pants = require('../lib/models/Pants');
+const pants = require('../lib/controllers/pants');
 
 describe('handOfResources routes', () => {
   beforeEach(() => {
